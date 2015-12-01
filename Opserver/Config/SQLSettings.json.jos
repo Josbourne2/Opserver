@@ -22,13 +22,8 @@
     ],
     "instances": [
         { 
-            "name": "NY-DB05",
-            "connectionString": "Data Source=NY-DB05;Initial Catalog=bob;Integrated Security=SSPI;", 
-        },
-        { "name": "NY-DESQL01" },
-        { "name": "NY-RESTORESQL01" },
-        { "name": "NY-UTILSQL01" },
-        { "name": "OR-DESQL01" },
-        { "name": "OR-HALOG01" }
+            "name": "LAPTOP",
+            "connectionString": "Data Source=LAPTOP\\SQL2014;Initial Catalog=master;Integrated Security=SSPI;"
+        }
     ]
 }

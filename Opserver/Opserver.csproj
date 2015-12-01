@@ -239,7 +239,7 @@
     <Content Include="Config\PollingSettings.json.example" />
     <Content Include="Config\RedisSettings.json.example" />
     <Content Include="Config\SecuritySettings.config.example" />
-    <Content Include="Config\SQLSettings.json.example" />
+    <None Include="Config\SQLSettings.json.jos" />
     <Content Include="Config\TeamCitySettings.json.example" />
     <Content Include="Content\img\logo\logo.eps" />
     <Content Include="Content\Styles.css.map">
@@ -248,6 +248,7 @@
     <Content Include="Config\JiraSettings.json.example" />
     <None Include="compilerconfig.json" />
     <None Include="Config\PagerDutySettings.json.example" />
+    <None Include="Config\SecuritySettings.config" />
     <None Include="Content\_Styles.HeadsUp.less">
       <DependentUpon>Styles.less</DependentUpon>
     </None>
@@ -660,7 +661,9 @@
       <Name>Opserver.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Config\SQLServer\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[TESTAD_DOMEIN_Mon_Instance] (
+    [id]                    INT            IDENTITY (1, 1) NOT NULL,
+    [Node]                  NVARCHAR (50)  NULL,
+    [Instance]              NVARCHAR (50)  NULL,
+    [Controle]              NVARCHAR (1)   NULL,
+    [versie]                NVARCHAR (50)  NULL,
+    [Lokatie]               NVARCHAR (50)  NULL,
+    [domein]                VARCHAR (16)   NULL,
+    [build]                 NCHAR (40)     NULL,
+    [editie]                NVARCHAR (50)  NULL,
+    [w_build]               NVARCHAR (50)  NULL,
+    [w_sp]                  NVARCHAR (50)  NULL,
+    [controledatum]         SMALLDATETIME  NULL,
+    [te_bewaken]            VARCHAR (1)    NULL,
+    [opmerkingen]           VARCHAR (4000) NULL,
+    [reden_onbereikbaar]    VARCHAR (4000) NULL,
+    [IsClustered]           BIT            NULL,
+    [DNS_Suffix]            VARCHAR (100)  NULL,
+    [Serviceaccount]        VARCHAR (200)  NULL,
+    [Data_dir]              VARCHAR (600)  NULL,
+    [Log_dir]               VARCHAR (600)  NULL,
+    [Backup_dir]            VARCHAR (600)  NULL,
+    [dd_laatst_beschikbaar] SMALLDATETIME  NULL,
+    [eigenaar]              VARCHAR (10)   NULL,
+    CONSTRAINT [PK_TESTAD_DOMEIN_Mon_Instance] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+

@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SQL_Monitoring</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{e730fae4-ecdd-44aa-acf1-45b950ffbc0b}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SQL_Monitoring</RootNamespace>
+    <AssemblyName>SQL_Monitoring</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Reporting\" />
+    <Folder Include="Reporting\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\DatabasePropsDynamic.sql" />
+    <Build Include="dbo\Tables\DatabasePropsStatic.sql" />
+    <Build Include="dbo\Tables\ErrLogData.sql" />
+    <Build Include="dbo\Tables\Flexnet_Input.sql" />
+    <Build Include="dbo\Tables\job_hist_backup.sql" />
+    <Build Include="dbo\Tables\Localadmin_groepen.sql" />
+    <Build Include="dbo\Tables\Mon_Audit_Remote_Servers.sql" />
+    <Build Include="dbo\Tables\Mon_Audits.sql" />
+    <Build Include="dbo\Tables\Mon_Audits_Ignore_List.sql" />
+    <Build Include="dbo\Tables\Mon_Audits_Remote_Staging.sql" />
+    <Build Include="dbo\Tables\Mon_Available_Service_Packs.sql" />
+    <Build Include="dbo\Tables\Mon_Backup_Excluded.sql" />
+    <Build Include="dbo\Tables\Mon_Backups.sql" />
+    <Build Include="dbo\Tables\Mon_Configurations.sql" />
+    <Build Include="dbo\Tables\Mon_DB.sql" />
+    <Build Include="dbo\Tables\Mon_DB_Files.sql" />
+    <Build Include="dbo\Tables\Mon_DB_Usage.sql" />
+    <Build Include="dbo\Tables\Mon_Excluded_Db_Backups.sql" />
+    <Build Include="dbo\Tables\Mon_FileSizes.sql" />
+    <Build Include="dbo\Tables\Mon_Instance.sql" />
+    <Build Include="dbo\Tables\Mon_Job_History.sql" />
+    <Build Include="dbo\Tables\mon_jobs.sql" />
+    <Build Include="dbo\Tables\Mon_Logboek.sql" />
+    <Build Include="dbo\Tables\Mon_Logins.sql" />
+    <Build Include="dbo\Tables\Mon_Server_Freediskspace.sql" />
+    <Build Include="dbo\Tables\Mon_VerifiedLogins.sql" />
+    <Build Include="dbo\Tables\Numbers.sql" />
+    <Build Include="dbo\Tables\TBL_Databases.sql" />
+    <Build Include="dbo\Tables\Temp_Autogrow_settings.sql" />
+    <Build Include="dbo\Tables\TESTAD_DOMEIN_Mon_Instance.sql" />
+    <Build Include="dbo\Views\Current_Monitored_Databases.sql" />
+    <Build Include="dbo\Views\achterlopende backups.sql" />
+    <Build Include="dbo\Views\change_job_owner.sql" />
+    <Build Include="dbo\Views\filegroei aanpassen grote dbs.sql" />
+    <Build Include="dbo\Views\Logins_met_sysadminrechten.sql" />
+    <Build Include="dbo\Views\Logins_met_sysadminrechten2.sql" />
+    <Build Include="dbo\Views\Mon_Failed_Jobs.sql" />
+    <Build Include="dbo\Views\Mon_Instance_Databases.sql" />
+    <Build Include="dbo\Views\Mon_instance_node.sql" />
+    <Build Include="dbo\Views\Onbereikbare instanties.sql" />
+    <Build Include="dbo\Views\Servers va 2005 diskinfo.sql" />
+    <Build Include="dbo\Views\Servers zonder recente systeembackupinfo.sql" />
+    <Build Include="dbo\Views\Servers zonder recente userdbbackupinfo.sql" />
+    <Build Include="dbo\Views\Verhouding_data_logfile.sql" />
+    <Build Include="dbo\Views\vw_script_autoclose_autoshrink_aanpassen.sql" />
+    <Build Include="dbo\Views\vw_script_autogrow_aanpassen.sql" />
+    <Build Include="dbo\Views\vw_script_autogrow_aanpassen_ori.sql" />
+    <Build Include="dbo\Views\ZZZ_Actuele servers en databasegroottes.sql" />
+    <Build Include="Security\admin.sql" />
+    <Build Include="dbo\Functions\InstID.sql" />
+    <Build Include="dbo\Functions\InstName.sql" />
+    <Build Include="dbo\Functions\SPLIT.sql" />
+    <Build Include="dbo\Stored Procedures\run_script_on_remote_server_using_osql.sql" />
+    <Build Include="dbo\Stored Procedures\sp_auto_create_maintjobs.sql" />
+    <Build Include="dbo\Stored Procedures\sp_Check_RebuildIndexes_SQL2000.sql" />
+    <Build Include="dbo\Stored Procedures\sp_Check_RebuildIndexes_SQL2005.sql" />
+    <Build Include="dbo\Stored Procedures\sp_create_maintjobs.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_add_instance.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_add_instance_CI.sql" />
+    <Build Include="dbo\Stored Procedures\sp_Mon_autogrowsettings_aanpassen.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_Backup.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_Backup_VSS.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_check_connectivity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_check_connectivity2.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_check_server_memory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_check_serversettings.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_check_serversettings_2008.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_CreateLinkedServer.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\sp_mon_DB_2005.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_DB_7_2000.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_DB_After_Incident.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_DB_appcontact.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_DB_files.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_DB_files_2000_ev_old.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_DB_Usage.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_default_path.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_delete_instance.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_freediskspace.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_generate_configurations_script.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_get_audit.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_get_audit_Anja.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_get_audit_from_remote_management_server.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_get_configurations.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_Job_history.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_Jobs_2005.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_Jobs_7_2000.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_Logins_2000.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_Logins_2005_2008.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_Logins_7.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_MP_history.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_recyclelog_jobhistory_prms.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_remove_instance.sql" />
+    <Build Include="dbo\Stored Procedures\sp_remove_disk_info.sql" />
+    <Build Include="dbo\Stored Procedures\sp_run_script_on_remote_server_using_osql.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\USP_PERFMON_Mem.sql" />
+    <Build Include="dbo\Stored Procedures\usp_serverup.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Verzamel_dbFileprops_linked_server.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Verzamel_dbprops_linked_server.sql" />
+    <Build Include="dbo\Stored Procedures\z_sp_mon_CreateLinkedServer_2.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Reporting\Stored Procedures\zzz_RptAllUserDatabases.sql" />
+    <Build Include="Security\admin_1.sql" />
+    <Build Include="Security\Configurations.sql" />
+    <Build Include="Security\Kentallen.sql" />
+    <Build Include="Security\Reporting.sql" />
+    <Build Include="Security\VMWare.sql" />
+    <Build Include="ExtendedProperties.sql" />
+    <Build Include="dbo\Tables\Mon_Software.sql" />
+    <Build Include="dbo\Tables\Mon_Software_Configurations.sql" />
+    <Build Include="dbo\Tables\Mon_Clusters.sql" />
+    <Build Include="Security\OpManager.sql" />
+    <Build Include="dbo\Tables\SecuritySettings.sql" />
+    <Build Include="dbo\Tables\Mon_Nodes.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_add_cluster.sql" />
+    <Build Include="dbo\Stored Procedures\sp_mon_add_instance_to_cluster.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SQL_Monitoring.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="SQL_Monitoring.refactorlog" />
+  </ItemGroup>
+</Project>

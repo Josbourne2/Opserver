@@ -5,7 +5,10 @@ namespace StackExchange.Opserver
 {
     public class SettingsSection : ConfigurationSection
     {
-        [ConfigurationProperty("provider"), DefaultValue("JSONFile")]
+        //[ConfigurationProperty("provider"), DefaultValue("JSONFile")]
+        //public string Provider => this["provider"] as string;
+
+        [ConfigurationProperty("provider"), DefaultValue("SQLDatabase")]
         public string Provider => this["provider"] as string;
 
         [ConfigurationProperty("name")]

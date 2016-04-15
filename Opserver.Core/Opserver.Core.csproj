@@ -374,6 +374,7 @@
     <Compile Include="Settings\SettingsProviders\JSONFileSettingsProvider.cs" />
     <Compile Include="Settings\RedisSettings.cs" />
     <Compile Include="Settings\SettingsProviders\SQLDatabaseSettingsProvider.cs" />
+    <Compile Include="Settings\SettingsProviders\SqlXmlHelper.cs" />
     <Compile Include="Settings\SettingsSection.cs" />
     <Compile Include="Settings\SQLSettings.cs" />
     <Compile Include="Settings\TeamCitySettings.cs" />

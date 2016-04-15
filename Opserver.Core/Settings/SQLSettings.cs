@@ -1,14 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Serialization;
 
 namespace StackExchange.Opserver
 {
+    [XmlRoot("SqlSettings"), XmlType("SqlSettings")]
     public class SQLSettings : Settings<SQLSettings>
     {
         public override bool Enabled => Clusters.Any() || Instances.Any();
 
+        [XmlArrayItem("cluster", typeof(Cluster))]
+        [XmlArray("clusters")]
         public List<Cluster> Clusters { get; set; }
 
+        [XmlArrayItem("instance", typeof(Instance))]
+        [XmlArray("instances")]
         public List<Instance> Instances { get; set; }
 
         public SQLSettings()
@@ -20,10 +26,13 @@ namespace StackExchange.Opserver
         /// <summary>
         /// The default connection string to use when connecting to servers, $ServerName$ will be parameterized
         /// </summary>
+        [XmlElement("defaultConnectionString")]
         public string DefaultConnectionString { get; set; }
 
         public class Cluster : ISettingsCollectionItem<Cluster>
         {
+            [XmlArrayItem("node", typeof(Instance))]
+            [XmlArray("nodes")]
             public List<Instance> Nodes { get; set; }
 
             public Cluster()
@@ -34,6 +43,7 @@ namespace StackExchange.Opserver
             /// <summary>
             /// The machine name for this SQL cluster
             /// </summary>
+            [XmlAttribute("name")]
             public string Name { get; set; }
 
             /// <summary>
@@ -44,6 +54,7 @@ namespace StackExchange.Opserver
             /// <summary>
             /// How many seconds before polling this cluster for status again
             /// </summary>
+            [XmlElement("refreshIntervalSeconds")]
             public int RefreshIntervalSeconds { get; set; }
 
             public bool Equals(Cluster other)
@@ -94,11 +105,13 @@ namespace StackExchange.Opserver
             /// <summary>
             /// The machine name for this SQL instance
             /// </summary>
+            [XmlAttribute("name")]
             public string Name { get; set; }
 
             /// <summary>
             /// Connection string for this instance
             /// </summary>
+            [XmlAttribute("connectionString")]
             public string ConnectionString { get; set; }
 
             /// <summary>

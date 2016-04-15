@@ -17,10 +17,11 @@ namespace StackExchange.Opserver.SettingsProviders
         }
 
         private readonly object _loadLock = new object();
-        private readonly ConcurrentDictionary<Type, object> _settingsCache = new ConcurrentDictionary<Type, object>();
+        private  ConcurrentDictionary<Type, object> _settingsCache = new ConcurrentDictionary<Type, object>();
 
         public override T GetSettings<T>()
         {
+            //_settingsCache = new ConcurrentDictionary<Type, object>();
             object cached;
             if (_settingsCache.TryGetValue(typeof (T), out cached))
                 return (T) cached;

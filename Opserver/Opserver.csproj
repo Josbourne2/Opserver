@@ -239,7 +239,7 @@
     <Content Include="Config\PollingSettings.json.example" />
     <Content Include="Config\RedisSettings.json.example" />
     <Content Include="Config\SecuritySettings.config.example" />
-    <None Include="Config\SQLSettings.json.jos" />
+    <None Include="Config\SQLSettings.json" />
     <Content Include="Config\TeamCitySettings.json.example" />
     <Content Include="Content\img\logo\logo.eps" />
     <Content Include="Content\Styles.css.map">
@@ -247,7 +247,7 @@
     </Content>
     <Content Include="Config\JiraSettings.json.example" />
     <None Include="compilerconfig.json" />
-    <None Include="Config\PagerDutySettings.json.example" />
+    <None Include="Config\PagerDutySettings.json" />
     <None Include="Config\SecuritySettings.config" />
     <None Include="Content\_Styles.HeadsUp.less">
       <DependentUpon>Styles.less</DependentUpon>

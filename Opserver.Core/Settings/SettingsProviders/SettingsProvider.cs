@@ -12,14 +12,14 @@ namespace StackExchange.Opserver.SettingsProviders
         public string ConnectionString { get; set; }
 
         // Accessors for built-in types
-        public PagerDutySettings PagerDuty => GetSettings<PagerDutySettings>();
-        public CloudFlareSettings CloudFlare => GetSettings<CloudFlareSettings>();
-        public DashboardSettings Dashboard => GetSettings<DashboardSettings>();
-        public ElasticSettings Elastic => GetSettings<ElasticSettings>();
-        public ExceptionsSettings Exceptions => GetSettings<ExceptionsSettings>();
-        public HAProxySettings HAProxy => GetSettings<HAProxySettings>();
-        public PollingSettings Polling => GetSettings<PollingSettings>();
-        public RedisSettings Redis => GetSettings<RedisSettings>();
+        public PagerDutySettings PagerDuty => new PagerDutySettings();
+        public CloudFlareSettings CloudFlare => new CloudFlareSettings();
+        public DashboardSettings Dashboard => new DashboardSettings();
+        public ElasticSettings Elastic => new ElasticSettings();
+        public ExceptionsSettings Exceptions => new ExceptionsSettings();
+        public HAProxySettings HAProxy => new HAProxySettings();
+        public PollingSettings Polling => new PollingSettings();
+        public RedisSettings Redis => new RedisSettings();
         public SQLSettings SQL => GetSettings<SQLSettings>();
         // Generic build settings later
         public TeamCitySettings TeamCity => GetSettings<TeamCitySettings>();

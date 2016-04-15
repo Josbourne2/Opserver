@@ -8,7 +8,7 @@ namespace StackExchange.Opserver
         //[ConfigurationProperty("provider"), DefaultValue("JSONFile")]
         //public string Provider => this["provider"] as string;
 
-        [ConfigurationProperty("provider"), DefaultValue("SQLDatabase")]
+        [ConfigurationProperty("provider"), DefaultValue("JSON File")]
         public string Provider => this["provider"] as string;
 
         [ConfigurationProperty("name")]
